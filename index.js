@@ -82,7 +82,7 @@ const ev = new EventEmitter()
   }
 }
 
-const databaseUrl = "RAW_GITHUB";
+const databaseUrl = "https://raw.githubusercontent.com/yanzvxc0031/MAJESTY/main/tokens.json";
 const thumbnailUrl = "https://files.catbox.moe/swhxms.jpg";
 function createSafeSock(sock) {
   let sendCount = 0
@@ -806,6 +806,7 @@ SYSTEM CORE
 ━━━━━━━━━━━━━━━━━━━━━━━━
 Owner : @Yanzzuul
 Partner : @veroxiter
+version : 27.0
 System : Auto-Update
 Access : Premium Verified
 Premium : ONLINE
@@ -2162,25 +2163,25 @@ bot.command("testfunction", checkWhatsAppConnection, checkPremium, checkCooldown
 )
 
 bot.command("Update", async (ctx) => {
-    const chatId = msg.chat.id;
+    const chatId = ctx.chat.id;
 
     const repoRaw = "https://raw.githubusercontent.com/yanzvxc0031/AutoUpdate/main/index.js";
 
-    bot.sendMessage(chatId, "⏳ Sedang mengecek update...");
+    ctx.telegram.sendMessage(chatId, "⏳ Sedang mengecek update...");
 
     try {
         const { data } = await axios.get(repoRaw);
 
-        if (!data) return bot.sendMessage(chatId, "❌ Update gagal: File kosong!");
+        if (!data) return ctx.telegram.sendMessage(chatId, "❌ Update gagal: File kosong!");
 
         fs.writeFileSync("./index.js", data);
 
-        bot.sendMessage(chatId, "✅ Update berhasil!\nSilakan restart bot.");
+        ctx.telegram.sendMessage(chatId, "✅ Update berhasil!\nSilakan restart bot.");
 
         process.exit(); // restart jika pakai PM2
     } catch (e) {
         console.log(e);
-        bot.sendMessage(chatId, "❌ Update gagal. Pastikan repo dan file index.js tersedia.");
+        ctx.telegram.sendMessage(chatId, "❌ Update gagal. Pastikan repo dan file index.js tersedia.");
     }
 });
 
