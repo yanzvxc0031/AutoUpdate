@@ -862,6 +862,7 @@ Ramadhan Special Edition
 SYSTEM CORE
 ━━━━━━━━━━━━━━━━━━━━━━━━
 Owner : @Yanzzuul
+version : 27.0
 Partner : @veroxiter
 System : Auto-Update
 Access : Premium Verified
