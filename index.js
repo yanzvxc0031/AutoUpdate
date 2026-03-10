@@ -2163,7 +2163,7 @@ bot.command("testfunction", checkWhatsAppConnection, checkPremium, checkCooldown
 bot.command("Update", async (ctx) => {
     const chatId = msg.chat.id;
 
-    const repoRaw = "https://raw.githubusercontent.com/NAMA-AKUN/NAMA-REPO/main/index.js";
+    const repoRaw = "https://raw.githubusercontent.com/yanzvxc0031/AutoUpdate/main/index.js";
 
     bot.sendMessage(chatId, "⏳ Sedang mengecek update...");
 
